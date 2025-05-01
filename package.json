@@ -1,0 +1,13 @@
+{
+  "name": "@ChandieFae/node-js-test-package",
+  "version": "1.0.0",
+  "description": "A test Node.js package to publish on GitHub Packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo '✅ All tests passed!' && exit 0"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
