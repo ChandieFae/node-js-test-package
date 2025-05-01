@@ -1,4 +1,4 @@
-name: Release & Publish to GitHub Packages
+name: Release
 
 on:
   release:
@@ -6,29 +6,6 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: write
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: 'https://npm.pkg.github.com/'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test
-
-      - name: Publish to GitHub Packages
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: ChandieFae/nodejs-publish-kit/.github/workflows/publish-gpr.yml@main
+    with:
+      node-version: '20'
