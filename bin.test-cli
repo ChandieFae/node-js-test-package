@@ -1,0 +1,4 @@
+npm install -g .
+test-cli
+npm install -g @chandiefae/test-cli
+test-cli
